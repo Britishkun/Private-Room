@@ -5,7 +5,7 @@ const PREFIX = "$";
 client.login(process.env.BOT_TOKEN);
 
 var mysql = require('mysql');
-
+const botID = ",D"
 const shards = '1';
 const pref = `"$"`;
 const ver = `"v2"`;
@@ -64,8 +64,8 @@ client.on('ready', async () => {
 
 const messagee = new Set();
 
-const footerText = `Private Rooms • PrivateRooms.xyz`
-const footerIcon = ('https://i.imgur.com/pyVvGtr.png')
+const footerText = `Private Rooms • `Talhasu#0001`
+const footerIcon = ('https://images-ext-2.discordapp.net/external/oQDQxsFrQ5oyC8O3U_Tel7MJXkrmSawKFtOnawuTj3U/https/images-ext-2.discordapp.net/external/WkmXB4tLecPn84ExvOOo3hEj79aYajdKC91pe1wzc38/https/cdn.weeb.sh/images/SkKn-xc1f.gif')
 
 client.on('message', async (message) => {
 if (!message.content.startsWith(PREFIX) || message.author.bot) return;
@@ -83,7 +83,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
   switch(args[0]){
         case 'setup':
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("You dont have permission to do that! (``ADMINISTRATOR``)");
-        if(checkchannel) return message.channel.send(`Error, this server is already set, if you found any problem please contact ShiNxz#0001, (You see this message because this server already have the necessary channels).`)
+        if(checkchannel) return message.channel.send(`Error, this server is already set, if you found any problem please contact `Talhasu#0001, (You see this message because this server already have the necessary channels).`)
         // Pre-Setup the channels
         // Commands embed
         let commands = new Discord.MessageEmbed();
@@ -102,7 +102,8 @@ let args = message.content.substring(PREFIX.length).split(" ");
         
         Please use the commands inside this channel.
         
-        **Please note:** the bot is still on his initial state, it means there might be some bugs,\nif you find any, please join this server: https://discord.gg/5ntSbvH and report them.
+        **Please note:** the bot is still on his initial state, it means there might be some bugs,\nif you find any, please join this server: https://
+https://discord.gg/BGFXzZVVJ9/BGFXzZVVJ9 and report them.
         
         Also, there is 5 seconds cooldown when making a private room, and 5 seconds \nslow mode on the commands channel to avoid abusing discord rate limit.`);
         commands.setColor("#ffffff");
@@ -138,25 +139,24 @@ Server Owner: ${message.channel.guild.owner.user.tag} | ${message.channel.guild.
 
         case 'help':
                 // Shows the commands
-                let authorr = '``ShiNxz#0001``';
+                let authorr = '```Talhasu#0001``';
                 let mainEmbed = new Discord.MessageEmbed()
                 .setTitle(`Private Rooms Information:`)
                 .setDescription(`Invite Private Rooms: 
-                [discordapp.con/prooms](https://discord.com/oauth2/authorize?client_id=748692267073798285&scope=bot&permissions=17050704)\n  `)
+                [discordapp.con/prooms](https://discord.com/oauth2/authorize?client_id=${botID}&scope=bot&permissions=)\n  `)
                 .setColor("#FFB100")
                 .setAuthor(footerText, footerIcon)
-                .addField("<:commands:725101186730164316> • **Commands:**", 
+                .addField(" • **Commands:**", 
                 '• **$help :** ``Showing last updates, commands and stats.``\n• **$adduser [@mention] :** ``Give the mentioned user a permission to your room.``\n• **$removeuser [@mention] :** ``Remove the mentioned user the permission to enter your room.``\n• **$setlimit [1-99] :** ``set the User Limit of your channel.``\n• **$Lock :** ``lock your channel to everyone in the server.``\n• **$Unlock :** ``unlock your channel, means everyone in your channel will have access to your room.``', false)
-                .addField("<:adminc:725114232512839801> • **Admin Commands**",
+                .addField(" • **Admin Commands**",
                 '• **$setup :** ``First server setup - creating al the the necessary channels.``', false)
-                .addField("<:info2:725114233280266320> • **Updates**", 'None\n', false)
-                .addField("<:info2:725114233280266320> • **Information**",
-                `<:creator:725122004449231001>  **Creator:**  ${authorr}.
-                <:website:725122005078114452>  **Website:**  [PrivateRooms.xyz](https://PrivateRooms.xyz)
-                <:dis:725122004729987102>  **Main Discord:**  [discord.gg/5ntSbvH](https://discord.gg/5ntSbvH)
-                <:js:725122550115467326>  **Other Bots:**  [trello.com/bots](https://trello.com/b/Xp2S7NEw/shinxz-discord-bots)
+                .addField(" • **Updates**", 'None\n', false)
+                .addField(" • **Information**",
+                `  **Creator:**  ${authorr}.
+                 **Support:**  [Server](https://discord.gg/BGFXzZVVJ9)
+                  **Main Discord:**  [discord.gg/5ntSbvH](https://discord.gg/BGFXzZVVJ9)
                 `, true)
-                .addField("<:stats2:725114233217351680> • **Stats**", '<:servers:725124366676787211>    **Servers:** ``'+`${client.guilds.cache.array().length}`+'``\n<:users:725124366899085332>    **Users:** ``'+`${client.users.cache.array().length}`+'`` \n<:channels:725124366266007642>    **Channels:** ``'+`${client.channels.cache.array().length}`+'``\n<:commands:725124366181859418>    **X:** ', true)
+                .addField("<:stats2:725114233217351680> • **Stats**", '    **Servers:** ``'+`${client.guilds.cache.array().length}`+'``\n    **Users:** ``'+`${client.users.cache.array().length}`+'`` \n   **Channels:** ``'+`${client.channels.cache.array().length}`+'``\n8>    **X:** ', true)
                 .setFooter(`Information requested by ${message.author.username}`)
                 .setTimestamp();
                 message.channel.send(mainEmbed);
@@ -342,7 +342,7 @@ will lock your channel to everyone in the server.
 > **$unlock**
 will unlock your channel, means everyone in your channel will have access to your room.
 Please use the commands inside this channel.
-**Please note:** the bot is still on his initial state, it means there might be some bugs,\nif you find any, please join this server: https://discord.gg/5ntSbvH and report them.
+**Please note:** the bot is still on his initial state, it means there might be some bugs,\nif you find any, please join this server: https://discord.gg/BGFXzZVVJ9 and report them.
 Also, there is 5 seconds cooldown when making a private room, and 5 seconds \nslow mode on the commands channel to avoid abusing discord rate limit.
 `);
                 commandss.setColor("#ffffff");
